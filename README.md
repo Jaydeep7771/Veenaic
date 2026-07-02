@@ -1,6 +1,6 @@
-# Veenaic — AI-Powered Digital Solutions Agency
+# Veeniac — AI-Powered Digital Solutions Agency
 
-Official website for [Veenaic](https://veenaic.in) — an AI-powered digital solutions agency specializing in custom websites, business dashboards, and AI automation for startups and businesses worldwide.
+Official website for [Veeniac](https://veeniac.in) — an AI-powered digital solutions agency specializing in custom websites, business dashboards, and AI automation for startups and businesses worldwide.
 
 ## Stack
 
@@ -15,8 +15,8 @@ Official website for [Veenaic](https://veenaic.in) — an AI-powered digital sol
 
 ## Live
 
-[veenaic.in](https://veenaic.in)
+[veeniac.in](https://veeniac.in)
 
 ## Contact
 
-hello@veenaic.in
+contact@veeniac.in

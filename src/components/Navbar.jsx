@@ -26,7 +26,7 @@ export default function Navbar() {
     <nav ref={navRef}>
       <a href="#" className="nav-logo">
         <div className="logo-mark">V</div>
-        <span className="logo-text">Veenaic</span>
+        <span className="logo-text">Veeniac</span>
       </a>
       <div className="nav-right">
         <ul className="nav-links">

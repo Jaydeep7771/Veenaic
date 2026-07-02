@@ -27,11 +27,11 @@ export default function Contact() {
         <div className="contact-info">
           <div className="contact-row">
             <span>Email</span>
-            <span>hello@veenaic.in</span>
+            <span>contact@veeniac.in</span>
           </div>
           <div className="contact-row">
             <span>Web</span>
-            <span>veenaic.in</span>
+            <span>veeniac.in</span>
           </div>
           <div className="contact-row">
             <span>Response</span>
