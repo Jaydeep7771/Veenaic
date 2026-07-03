@@ -1,3 +1,5 @@
+const taglineItems = ['Websites', 'Dashboards', 'AI Automation', 'BI Analytics']
+
 export default function Hero() {
   return (
     <section id="hero">
@@ -10,6 +12,14 @@ export default function Hero() {
           <span className="line"><span>scale your</span></span>
           <span className="line"><span className="grad-text">business.</span></span>
         </h1>
+        <div className="hero-taglines">
+          {taglineItems.map((item, i) => (
+            <span key={item}>
+              {item}
+              {i < taglineItems.length - 1 && <span className="hero-taglines-dot">·</span>}
+            </span>
+          ))}
+        </div>
         <div className="hero-bottom">
           <p className="hero-sub">Websites, dashboards, and AI automation engineered for startups and businesses that want to grow fast.</p>
           <div className="hero-btns">

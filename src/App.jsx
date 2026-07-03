@@ -1,7 +1,10 @@
+import { useEffect } from 'react'
+import Preloader from './components/Preloader'
 import Cursor from './components/Cursor'
+import Scene3D from './three/Scene3D'
+import { startScrollTracking } from './three/scrollStore'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Marquee from './components/Marquee'
 import About from './components/About'
 import Services from './components/Services'
 import Work from './components/Work'
@@ -15,12 +18,17 @@ import useReveal from './hooks/useReveal'
 export default function App() {
   useReveal()
 
+  useEffect(() => {
+    return startScrollTracking()
+  }, [])
+
   return (
     <>
+      <Preloader />
+      <Scene3D />
       <Cursor />
       <Navbar />
       <Hero />
-      <Marquee />
       <About />
       <Services />
       <Work />
