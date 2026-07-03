@@ -38,6 +38,7 @@ export default function Services() {
           ))}
         </ul>
         <div className="services-detail">
+          <div className="sd-ghost" key={`g${current.num}`}>{current.num}</div>
           <div className="services-detail-inner" key={current.num}>
             <div className="sd-icon">{current.icon}</div>
             <div className="sd-num">{current.num} / 06</div>
