@@ -6,7 +6,7 @@ export default function Preloader() {
 
   useEffect(() => {
     const start = performance.now()
-    const duration = 1500
+    const duration = 900
     let raf
     const tick = (now) => {
       const p = Math.min((now - start) / duration, 1)
@@ -14,7 +14,7 @@ export default function Preloader() {
       if (p < 1) {
         raf = requestAnimationFrame(tick)
       } else {
-        setTimeout(() => setGone(true), 1000)
+        setTimeout(() => setGone(true), 420)
       }
     }
     raf = requestAnimationFrame(tick)
@@ -25,10 +25,13 @@ export default function Preloader() {
 
   return (
     <div className={`preloader${count >= 100 ? ' exit' : ''}`}>
-      <div className="preloader-name">
-        {'Veeniac'.split('').map((ch, i) => (
-          <span key={i} style={{ animationDelay: `${i * 0.06}s` }}>{ch}</span>
-        ))}
+      <div className="preloader-inner">
+        <div className="preloader-name">
+          {'Veeniac'.split('').map((ch, i) => (
+            <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>{ch}</span>
+          ))}
+        </div>
+        <div className="preloader-sub">Product systems loading</div>
       </div>
       <div className="preloader-count">{count}%</div>
     </div>

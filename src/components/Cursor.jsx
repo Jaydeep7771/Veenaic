@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const HOVER_SELECTOR = 'a,button,.product-card,.services-list-item'
+const HOVER_SELECTOR = 'a,button,.product-card,.services-list-item,.choice-chip,.hero-stat,.signal-card'
 
 export default function Cursor() {
   const cursorRef = useRef(null)

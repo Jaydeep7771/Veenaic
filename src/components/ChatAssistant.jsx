@@ -3,38 +3,38 @@ import { useEffect, useRef, useState } from 'react'
 const steps = [
   {
     id: 'intent',
-    bot: () => "Hi! 👋 I'm the Veeniac assistant. What brings you here today?",
+    bot: () => 'Welcome to the Veeniac build desk. What are you trying to shape?',
     type: 'chips',
-    options: ['Build a custom product', 'Explore Invixy', 'Dashboards & AI automation', 'Something else'],
+    options: ['Build a custom product', 'Explore Invixy', 'Dashboard or AI workflow', 'Not sure yet'],
   },
   {
     id: 'name',
-    bot: () => "Great — I can help with that. What's your name?",
+    bot: () => 'Good place to start. What should we call you?',
     type: 'text',
-    placeholder: 'Type your name…',
+    placeholder: 'Type your name',
   },
   {
     id: 'email',
-    bot: (a) => `Nice to meet you, ${a.name}! What's the best email to reach you at?`,
+    bot: (a) => `Nice to meet you, ${a.name}. What email should we reply to?`,
     type: 'email',
     placeholder: 'you@company.com',
   },
   {
     id: 'budget',
-    bot: () => 'And what budget range are you working with?',
+    bot: () => 'What budget range are you considering?',
     type: 'chips',
-    options: ['$500 – $1,000', '$1,000 – $5,000', '$5,000+', 'Not sure yet'],
+    options: ['$500 - $1,000', '$1,000 - $5,000', '$5,000+', 'Need guidance'],
   },
   {
     id: 'details',
-    bot: () => 'Last one — tell me a bit about your project, or just skip this.',
+    bot: () => 'Last bit: describe the workflow, product, or business problem in a few words.',
     type: 'text',
-    placeholder: 'A few words about your project…',
+    placeholder: 'A few words about the project',
     skippable: true,
   },
   {
     id: 'done',
-    bot: (a) => `Perfect, ${a.name}! ✅ You're interested in "${a.intent}" with a budget of ${a.budget}. Our team will reply at ${a.email} within 24 hours — or send it straight to our inbox now:`,
+    bot: (a) => `Ready, ${a.name}. You are interested in "${a.intent}" with a budget of ${a.budget}. Send this brief to our inbox and we will reply at ${a.email}.`,
     type: 'final',
   },
 ]
@@ -56,7 +56,7 @@ export default function ChatAssistant({ onClose }) {
       setMessages((m) => [...m, { from: 'bot', text: steps[index].bot(currentAnswers) }])
       setTyping(false)
       setStepIndex(index)
-    }, 650 + Math.random() * 450)
+    }, 520 + Math.random() * 320)
   }
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function ChatAssistant({ onClose }) {
       setMessages((m) => [
         ...m,
         { from: 'user', text },
-        { from: 'bot', text: "Hmm, that doesn't look like a valid email — mind double-checking it?" },
+        { from: 'bot', text: 'That email does not look right yet. Try one more time?' },
       ])
       setInputValue('')
       return
@@ -91,7 +91,7 @@ export default function ChatAssistant({ onClose }) {
 
   const skip = () => {
     if (!step || typing) return
-    const next = { ...answers, [step.id]: '—' }
+    const next = { ...answers, [step.id]: '-' }
     setAnswers(next)
     setMessages((m) => [...m, { from: 'user', text: 'Skip for now' }])
     if (stepIndex + 1 < steps.length) pushBot(stepIndex + 1, next)
@@ -107,7 +107,7 @@ export default function ChatAssistant({ onClose }) {
   }
 
   const mailtoHref = () => {
-    const subject = `Project inquiry — ${answers.name || 'Website lead'}`
+    const subject = `Project inquiry from ${answers.name || 'Website lead'}`
     const body = [
       `Name: ${answers.name || ''}`,
       `Email: ${answers.email || ''}`,
@@ -129,11 +129,11 @@ export default function ChatAssistant({ onClose }) {
       <div className="chat-header">
         <div className="chat-avatar">V</div>
         <div>
-          <div className="chat-title">Veeniac Assistant</div>
-          <div className="chat-status">Online — replies instantly</div>
+          <div className="chat-title">Veeniac Build Desk</div>
+          <div className="chat-status">Ready for a brief</div>
         </div>
         {onClose && (
-          <button type="button" className="chat-close" aria-label="Close chat" onClick={onClose}>×</button>
+          <button type="button" className="chat-close" aria-label="Close chat" onClick={onClose}>x</button>
         )}
       </div>
       <div className="chat-messages" ref={messagesRef}>
@@ -141,7 +141,7 @@ export default function ChatAssistant({ onClose }) {
           <div className={`chat-msg ${m.from}`} key={i}>{m.text}</div>
         ))}
         {typing && (
-          <div className="chat-typing">
+          <div className="chat-typing" aria-label="Assistant is typing">
             <span></span><span></span><span></span>
           </div>
         )}
@@ -166,12 +166,12 @@ export default function ChatAssistant({ onClose }) {
           {step.skippable && (
             <button type="button" className="chat-skip" onClick={skip}>Skip</button>
           )}
-          <button type="submit" className="chat-send" aria-label="Send">→</button>
+          <button type="submit" className="chat-send" aria-label="Send">-&gt;</button>
         </form>
       )}
       {step && !typing && step.type === 'final' && (
         <div className="chat-final">
-          <a href={mailtoHref()} className="chat-mailto">Send to our inbox →</a>
+          <a href={mailtoHref()} className="chat-mailto">Send brief</a>
           <button type="button" className="chat-restart" onClick={restart}>Start over</button>
         </div>
       )}

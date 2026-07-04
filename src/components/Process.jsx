@@ -1,14 +1,44 @@
 import { useEffect, useRef, useState } from 'react'
 
 const steps = [
-  { n: '01', title: 'Discovery', desc: 'Deep-dive into your business goals, users, and the problems that actually need solving.' },
-  { n: '02', title: 'Strategy', desc: 'Define scope, architecture, and a clear roadmap with milestones and deliverables.' },
-  { n: '03', title: 'Design', desc: "Premium UI/UX design aligned with your brand and conversion goals." },
-  { n: '04', title: 'Build', desc: 'Clean, scalable code with daily updates and complete transparency throughout.' },
-  { n: '05', title: 'Launch', desc: 'Deploy, test, and optimize — with support that continues well after go-live.' },
+  {
+    n: '01',
+    verb: 'Decode',
+    title: 'Map the real workflow',
+    desc: 'We trace the messy handoffs, data sources, edge cases, and decisions before naming the product.',
+    artifact: 'Workflow map + build risks',
+  },
+  {
+    n: '02',
+    verb: 'Prototype',
+    title: 'Make the first useful surface',
+    desc: 'We design the core screens quickly so stakeholders can react to something concrete.',
+    artifact: 'Clickable interface + scope lock',
+  },
+  {
+    n: '03',
+    verb: 'Instrument',
+    title: 'Wire data, roles, and guardrails',
+    desc: 'The system gets its data model, permissions, automations, and review points before polish.',
+    artifact: 'Architecture + integration plan',
+  },
+  {
+    n: '04',
+    verb: 'Ship',
+    title: 'Release in working slices',
+    desc: 'We launch the smallest complete system, test it with real usage, and keep the feedback loop tight.',
+    artifact: 'Production release + QA notes',
+  },
+  {
+    n: '05',
+    verb: 'Operate',
+    title: 'Improve it after reality hits',
+    desc: 'Usage teaches the next version. We measure, tune, and add the pieces that actually matter.',
+    artifact: 'Iteration backlog + growth loop',
+  },
 ]
 
-const STEP_VH = 70
+const STEP_VH = 68
 
 export default function Process() {
   const sectionRef = useRef(null)
@@ -52,16 +82,26 @@ export default function Process() {
       style={{ height: `${100 + (steps.length - 1) * STEP_VH}vh` }}
     >
       <div className="process-sticky">
-        <div className="process-header reveal">
-          <h2>How we work</h2>
+        <div className="section-intro process-intro reveal">
+          <p className="section-label">Build Loop</p>
+          <h2>Less ceremony. More working software.</h2>
         </div>
         <div className="process-stage">
-          <div className="process-num-ghost" key={`n${active}`}>{step.n}</div>
-          <div className="process-stage-content" key={`c${active}`}>
-            <div className="process-stage-label">Step {step.n} / 05</div>
+          <div className="process-map" aria-hidden="true">
+            {steps.map((s, i) => (
+              <span key={s.n} className={i <= active ? 'on' : ''}>{s.n}</span>
+            ))}
+          </div>
+          <article className="process-stage-content" key={step.n}>
+            <p className="process-stage-label">{step.n} / {step.verb}</p>
             <h3>{step.title}</h3>
             <p>{step.desc}</p>
-          </div>
+            <div className="process-artifact">
+              <span>Artifact</span>
+              <strong>{step.artifact}</strong>
+            </div>
+          </article>
+          <div className="process-ghost" aria-hidden="true">{step.verb}</div>
         </div>
         <div className="process-meter">
           {steps.map((s, i) => (

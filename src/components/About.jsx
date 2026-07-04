@@ -1,7 +1,26 @@
 import { useEffect, useRef } from 'react'
 
 const statement =
-  "Veeniac is a digital product agency. We don't just take briefs — we build and operate our own software products, and we bring that same product muscle to the platforms, dashboards, and AI systems your business needs."
+  'Veeniac is not a brochure shop. We build our own software, operate it in public, and bring that owner mindset into client systems where invoices, machines, documents, leads, and decisions all need to move cleanly.'
+
+const principles = [
+  {
+    title: 'Operator memory',
+    desc: 'We design around the daily pressure of the people who will actually use the product.',
+  },
+  {
+    title: 'Shippable strategy',
+    desc: 'Roadmaps are only useful when they become screens, data models, integrations, and releases.',
+  },
+  {
+    title: 'AI with handles',
+    desc: 'Automation needs sources, approvals, fallbacks, and interfaces your team can trust.',
+  },
+  {
+    title: 'After-launch pulse',
+    desc: 'We stay close to the product after go-live so the system keeps improving instead of freezing.',
+  },
+]
 
 export default function About() {
   const textRef = useRef(null)
@@ -16,9 +35,9 @@ export default function About() {
       ticking = false
       const rect = el.getBoundingClientRect()
       const vh = window.innerHeight
-      const progress = Math.min(Math.max((vh * 0.85 - rect.top) / (rect.height + vh * 0.45), 0), 1)
+      const progress = Math.min(Math.max((vh * 0.86 - rect.top) / (rect.height + vh * 0.42), 0), 1)
       const lit = Math.floor(progress * words.length)
-      words.forEach((w, i) => w.classList.toggle('lit', i < lit))
+      words.forEach((word, i) => word.classList.toggle('lit', i < lit))
     }
     const onScroll = () => {
       if (!ticking) {
@@ -38,24 +57,25 @@ export default function About() {
 
   return (
     <section id="about">
+      <div className="section-intro reveal">
+        <p className="section-label">Operator Mindset</p>
+        <h2>We build like the product has to pay rent.</h2>
+      </div>
       <div className="about-statement">
-        <div className="about-label">About Veeniac</div>
         <p className="statement-text" ref={textRef}>
           {statement.split(' ').map((word, i) => (
-            <span className="word" key={i}>{word} </span>
+            <span className="word" key={`${word}-${i}`}>{word} </span>
           ))}
         </p>
-        <a href="#work" className="about-link">See our work →</a>
       </div>
-      <div className="about-stats">
-        <div className="stat-box reveal">
-          <div className="stat-num grad">04</div>
-          <div className="stat-desc">Products in production — built, shipped, and operated by our team</div>
-        </div>
-        <div className="stat-box reveal">
-          <div className="stat-num">12+</div>
-          <div className="stat-desc">Countries served — US, UK, UAE, Europe, Australia and growing</div>
-        </div>
+      <div className="principle-grid">
+        {principles.map((item, index) => (
+          <article className="principle-card reveal" key={item.title}>
+            <span className="principle-index">{String(index + 1).padStart(2, '0')}</span>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </article>
+        ))}
       </div>
     </section>
   )
