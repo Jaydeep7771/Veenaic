@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 const statement =
-  "Veeniac is an AI-powered digital solutions agency. We don't just write code — we solve the operational, sales, and growth problems behind your business with websites, dashboards, and intelligent automation."
+  "Veeniac is a digital product agency. We don't just take briefs — we build and operate our own software products, and we bring that same product muscle to the platforms, dashboards, and AI systems your business needs."
 
 export default function About() {
   const textRef = useRef(null)
@@ -49,8 +49,8 @@ export default function About() {
       </div>
       <div className="about-stats">
         <div className="stat-box reveal">
-          <div className="stat-num grad">50+</div>
-          <div className="stat-desc">Projects delivered across web, dashboards, and AI automation</div>
+          <div className="stat-num grad">04</div>
+          <div className="stat-desc">Products in production — built, shipped, and operated by our team</div>
         </div>
         <div className="stat-box reveal">
           <div className="stat-num">12+</div>
