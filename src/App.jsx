@@ -13,6 +13,7 @@ import Testimonials from './components/Testimonials'
 import Cta from './components/Cta'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingChat from './components/FloatingChat'
 import useReveal from './hooks/useReveal'
 
 export default function App() {
@@ -29,14 +30,15 @@ export default function App() {
       <Cursor />
       <Navbar />
       <Hero />
+      <Work />
       <About />
       <Services />
-      <Work />
       <Process />
       <Testimonials />
       <Cta />
       <Contact />
       <Footer />
+      <FloatingChat />
     </>
   )
 }

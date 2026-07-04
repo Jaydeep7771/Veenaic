@@ -1,8 +1,8 @@
 export const sectionIds = [
   'hero',
+  'work',
   'about',
   'services',
-  'work',
   'process',
   'testimonials',
   'cta',

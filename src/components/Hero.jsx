@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const taglineItems = ['Websites', 'Dashboards', 'AI Automation', 'BI Analytics']
+const taglineItems = ['Invixy', 'Manufacture OS', 'Enterprise RAG', 'Synapse AI']
 
 export default function Hero() {
   const wrapRef = useRef(null)
@@ -34,11 +34,11 @@ export default function Hero() {
       <div className="bg-grid"></div>
       <div className="hero-glow"></div>
       <div className="hero-content-wrap" ref={wrapRef}>
-        <div className="hero-tag">AI-Powered Digital Solutions</div>
+        <div className="hero-tag">Digital Product Agency</div>
         <h1 className="hero-headline">
-          <span className="line"><span>Built to</span></span>
-          <span className="line"><span>scale your</span></span>
-          <span className="line"><span className="grad-text">business.</span></span>
+          <span className="line"><span>We ship</span></span>
+          <span className="line"><span>products that</span></span>
+          <span className="line"><span className="grad-text">mean business.</span></span>
         </h1>
         <div className="hero-taglines">
           {taglineItems.map((item, i) => (
@@ -49,10 +49,10 @@ export default function Hero() {
           ))}
         </div>
         <div className="hero-bottom">
-          <p className="hero-sub">Websites, dashboards, and AI automation engineered for startups and businesses that want to grow fast.</p>
+          <p className="hero-sub">Veeniac designs, builds, and operates software products — from invoicing platforms to factory dashboards. The next one could be built for your business.</p>
           <div className="hero-btns">
-            <a href="#contact" className="btn-dark">Start a project</a>
-            <a href="#work" className="btn-ghost">View work →</a>
+            <a href="#work" className="btn-dark">Explore our products</a>
+            <a href="#contact" className="btn-ghost">Build yours with us →</a>
           </div>
         </div>
       </div>

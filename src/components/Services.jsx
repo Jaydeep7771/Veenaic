@@ -16,8 +16,8 @@ export default function Services() {
   return (
     <section id="services">
       <div className="services-header reveal">
-        <h2>What we do</h2>
-        <p>Six focused services. Each one designed to deliver measurable business results.</p>
+        <h2>What we build for you</h2>
+        <p>The same product engineering behind Invixy and Manufacture OS — applied to your business.</p>
       </div>
       <div className="services-split reveal">
         <ul className="services-list">
