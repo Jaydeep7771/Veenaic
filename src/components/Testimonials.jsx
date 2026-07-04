@@ -1,28 +1,35 @@
-const testimonials = [
-  { initials: 'JM', quote: '"Veeniac transformed our reporting. The dashboard saved my team 15 hours a week and finally gave us clarity on our pipeline."', name: 'James Mitchell', role: 'CEO, GrowthStack — USA' },
-  { initials: 'SA', quote: '"The AI automation they built for our document workflow was a game changer. What took 3 staff now runs automatically overnight."', name: 'Sara Al-Fahad', role: 'Operations Director — UAE' },
-  { initials: 'LK', quote: '"Best investment we made this year. Our new website tripled inbound leads in the first month. The design is simply world-class."', name: 'Liam Keane', role: 'Founder, Arcflow — UK' },
+const signals = [
+  {
+    metric: '15h/wk',
+    title: 'Less spreadsheet chasing',
+    text: 'Reporting surfaces should remove recurring status calls, not create another dashboard nobody trusts.',
+  },
+  {
+    metric: '3x',
+    title: 'Cleaner lead capture',
+    text: 'High-intent pages need fast context, sharp proof, and a path that lets serious buyers raise their hand.',
+  },
+  {
+    metric: '0.2s',
+    title: 'Interface response target',
+    text: 'Operational tools should feel immediate because slow software becomes a hidden tax on every shift.',
+  },
 ]
 
 export default function Testimonials() {
   return (
     <section id="testimonials">
-      <div className="test-header reveal">
-        <h2>Client stories</h2>
+      <div className="section-intro test-intro reveal">
+        <p className="section-label">Outcome Signals</p>
+        <h2>We optimize for the things people feel on Monday.</h2>
       </div>
-      <div className="test-grid">
-        {testimonials.map((t) => (
-          <div className="test-card reveal" key={t.initials}>
-            <div className="test-stars">★★★★★</div>
-            <p className="test-quote">{t.quote}</p>
-            <div className="test-who">
-              <div className="test-av">{t.initials}</div>
-              <div className="test-name-wrap">
-                <div className="name">{t.name}</div>
-                <div className="role">{t.role}</div>
-              </div>
-            </div>
-          </div>
+      <div className="signal-grid">
+        {signals.map((signal) => (
+          <article className="signal-card reveal" key={signal.metric}>
+            <span>{signal.metric}</span>
+            <h3>{signal.title}</h3>
+            <p>{signal.text}</p>
+          </article>
         ))}
       </div>
     </section>

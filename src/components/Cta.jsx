@@ -1,12 +1,17 @@
 export default function Cta() {
   return (
     <section id="cta">
-      <div className="cta-glow"></div>
-      <div className="cta-label reveal">Get started</div>
-      <h2 className="cta-title reveal">Your product<br />could be <span className="grad-text">next.</span></h2>
-      <div className="cta-btns reveal">
-        <a href="#contact" className="btn-dark">Book free consultation</a>
-        <a href="#work" className="btn-ghost">See our products →</a>
+      <div className="cta-inner reveal">
+        <p className="section-label">Next Build</p>
+        <h2>Bring one workflow that keeps leaking time.</h2>
+        <p>
+          We will turn it into a clear product brief, a working interface, and a
+          launch path your team can actually follow.
+        </p>
+        <div className="cta-btns">
+          <a href="#contact" className="btn-dark">Start the brief</a>
+          <a href="#work" className="btn-ghost">Study the products</a>
+        </div>
       </div>
     </section>
   )

@@ -15,9 +15,9 @@ export default function FloatingChat() {
         type="button"
         className="chat-fab"
         onClick={() => setOpen((o) => !o)}
-        aria-label={open ? 'Close chat assistant' : 'Open chat assistant'}
+        aria-label={open ? 'Close build desk' : 'Open build desk'}
       >
-        {open ? '×' : '💬'}
+        {open ? 'x' : 'V'}
         {!open && <span className="chat-fab-ping"></span>}
       </button>
     </>

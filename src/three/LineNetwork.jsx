@@ -11,14 +11,14 @@ const FIELD_Z = 2
 const PUSH_RADIUS = 1.6
 
 const stages = [
-  { color: '#f0eee8', connectionDistance: 2.4, driftSpeed: 0.15 }, // hero
-  { color: '#8a8a8a', connectionDistance: 1.8, driftSpeed: 0.10 }, // about
-  { color: '#D9FF3C', connectionDistance: 2.0, driftSpeed: 0.18 }, // services
-  { color: '#f0eee8', connectionDistance: 2.6, driftSpeed: 0.22 }, // work / products
-  { color: '#8a8a8a', connectionDistance: 1.6, driftSpeed: 0.08 }, // process
-  { color: '#D9FF3C', connectionDistance: 1.9, driftSpeed: 0.12 }, // testimonials
-  { color: '#f0eee8', connectionDistance: 2.8, driftSpeed: 0.25 }, // cta
-  { color: '#8a8a8a', connectionDistance: 1.5, driftSpeed: 0.06 }, // contact
+  { color: '#d7ff45', connectionDistance: 2.55, driftSpeed: 0.16 },
+  { color: '#f5f1e7', connectionDistance: 2.35, driftSpeed: 0.2 },
+  { color: '#c9a06b', connectionDistance: 1.9, driftSpeed: 0.11 },
+  { color: '#77d9df', connectionDistance: 2.05, driftSpeed: 0.18 },
+  { color: '#d7ff45', connectionDistance: 1.65, driftSpeed: 0.08 },
+  { color: '#ff8b68', connectionDistance: 1.95, driftSpeed: 0.13 },
+  { color: '#f5f1e7', connectionDistance: 2.7, driftSpeed: 0.24 },
+  { color: '#9d988c', connectionDistance: 1.6, driftSpeed: 0.07 },
 ]
 
 export default function LineNetwork() {

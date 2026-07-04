@@ -1,21 +1,30 @@
-# Veeniac — AI-Powered Digital Solutions Agency
+# Veeniac
 
-Official website for [Veeniac](https://veeniac.in) — an AI-powered digital solutions agency specializing in custom websites, business dashboards, and AI automation for startups and businesses worldwide.
+Official website for [Veeniac](https://veeniac.in), a product lab for business operating software.
+
+## Positioning
+
+Veeniac designs, ships, and operates software for invoicing, manufacturing operations, enterprise AI, dashboards, and custom internal workflows.
 
 ## Stack
 
-- Pure HTML5, CSS3, Vanilla JS (prototype)
-- Production build: Next.js + React + Tailwind CSS + TypeScript + Framer Motion
+- Vite
+- React
+- Three.js with React Three Fiber
+- Custom CSS
 
-## Services
+## Local Development
 
-- Custom Website Development
-- Business Dashboards & BI Analytics
-- AI Automation & Workflow Solutions
+```bash
+npm install
+npm run dev
+```
 
-## Live
+## Production Build
 
-[veeniac.in](https://veeniac.in)
+```bash
+npm run build
+```
 
 ## Contact
 
